@@ -16,6 +16,7 @@ model Events {
   id            String          @id @default(uuid())
   name          String
   date          DateTime
+  active        Boolean
   created_at    DateTime        @default(now())
   updated_at    DateTime        @default(now())
   subscriptions Subscriptions[]
@@ -40,6 +41,7 @@ model Subscriptions {
   id             String   @id @default(uuid())
   participant_id String
   event_id       String
+  paid           Boolean
   created_at     DateTime @default(now())
   updated_at     DateTime @default(now())
 
